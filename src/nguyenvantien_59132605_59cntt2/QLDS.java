@@ -13,19 +13,26 @@ import java.util.ArrayList;
  */
 public class QLDS implements IQLDS{
 
+    ArrayList<CaNhan> listCaNhan = new ArrayList<>();
+        
     @Override
     public int them(CaNhan p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        listCaNhan.add(p);
+        return 1;
     }
 
     @Override
     public int xoa(String ten) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        var removeIf = listCaNhan.removeIf((CaNhan p) -> p.getHoTen().equals(ten));
+        if(removeIf == true)
+            return 1;
+        else
+            return 0;
     }
 
     @Override
     public void inDS(ArrayList<CaNhan> ls) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        listCaNhan.forEach((CaNhan p) -> p.hienThiTT());
     }
     
 }
