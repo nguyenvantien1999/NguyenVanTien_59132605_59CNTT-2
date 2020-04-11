@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package nguyenvantien_59132605_59cntt2;
+package nguyenvantien_59132605_LopHoc;
 
 import java.util.ArrayList;
 
@@ -31,8 +31,11 @@ public class QLDS implements IQLDS{
     }
 
     @Override
-    public void inDS(ArrayList<CaNhan> ls) {
-        listCaNhan.forEach((CaNhan p) -> p.hienThiTT());
+    public void inDS() {
+        for(int i = 0; i < listCaNhan.size(); i++){
+            System.out.println(listCaNhan.get(i).hienThiTT());
+            System.out.println("---------------------------");
+        }
     }
     
 }
